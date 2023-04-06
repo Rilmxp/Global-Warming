@@ -1,12 +1,11 @@
-import './App.css'
+import Home from "./pages/components/Home";
 
 function App() {
-
   return (
     <div className="App">
-      Global Warming 
+      <Home />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
