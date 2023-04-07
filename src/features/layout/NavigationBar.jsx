@@ -9,7 +9,7 @@ import logo from "../../assets/images/logo.png";
 function NavigationBar() {
   return (
     <>
-      <Navbar bg="light" expand="md" className="mb-3">
+      <Navbar bg="light" expand="md">
         <Container fluid>
           <Navbar.Brand href="#">
             <img
