@@ -1,7 +1,13 @@
+// NAVBAR RESETS
+
 .navbar-toggler {
   border: none;
 }
 
 .navbar-expand-md .navbar-nav .nav-link {
   padding-right: 14px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
 }

@@ -1,1 +1,39 @@
+@import "../../styles/config";
 
+.brandLink {
+  text-decoration: none;
+}
+.temperature {
+  &:hover {
+    @include temperature-gradient;
+    @include crop-text-background;
+  }
+}
+
+.carbonDioxide {
+  &:hover {
+    @include carbon-dioxide-gradient;
+    @include crop-text-background;
+  }
+}
+
+.methane {
+  &:hover {
+    @include methane-gradient;
+    @include crop-text-background;
+  }
+}
+
+.nitrousOxide {
+  &:hover {
+    @include nitrous-oxide-gradient;
+    @include crop-text-background;
+  }
+}
+
+.polarIce {
+  &:hover {
+    @include polar-ice-gradient;
+    @include crop-text-background;
+  }
+}

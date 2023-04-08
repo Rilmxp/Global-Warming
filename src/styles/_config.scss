@@ -23,11 +23,63 @@
   -webkit-text-size-adjust: 100%;
 }
 
+// variables
+$color-temperature1: #f5af19;
+$color-temperature2: #f12711;
+
+$color-carbon-dioxide1: #3f4c6b;
+$color-carbon-dioxide2: #606c88;
+
+$color-methane1: #45b649;
+$color-methane2: #dce35b;
+
+$color-nitrous-oxide1: #243b55;
+$color-nitrous-oxide2: #141e30;
+
+$color-polar-ice1: #1c92d2;
+$color-polar-ice2: #f2fcfe;
+
 body {
   font-family: "Montserrat", "Arial", sans-serif;
-  // background-color: black;
 }
 
-main {
-  // min-height: 90vh;
+// MIXINS //
+
+// Creates a gradient with two given colors. used below to create a gradient for each climate change factor.
+@mixin color-factor($color1, $color2) {
+  background-color: $color2; /* fallback for old browsers */
+
+  // Chrome 10-25, Safari 5.1-6
+  background: -webkit-linear-gradient(to right, $color1, $color2);
+
+  // W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
+  background: linear-gradient(to right, $color1, $color2);
 }
+
+// makes text out of a gradient background.
+@mixin crop-text-background {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// All gradients for each climate change factor
+@mixin temperature-gradient {
+  @include color-factor($color-temperature1, $color-temperature2);
+}
+
+@mixin carbon-dioxide-gradient {
+  @include color-factor($color-carbon-dioxide1, $color-carbon-dioxide2);
+}
+
+@mixin methane-gradient {
+  @include color-factor($color-methane1, $color-methane2);
+}
+
+@mixin nitrous-oxide-gradient {
+  @include color-factor($color-nitrous-oxide1, $color-nitrous-oxide2);
+}
+
+@mixin polar-ice-gradient {
+  @include color-factor($color-polar-ice1, $color-polar-ice2);
+} ;

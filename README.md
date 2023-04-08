@@ -1,11 +1,5 @@
 https://global-warming.org/
 
-methane - green
-temperature - red +
-polar ice - white +
-carbon dioxide gray +
-nitrous oxide blue +
-
 Temperature - https://global-warming.org/api/temperature-api
 carbon dioxide - https://global-warming.org/api/co2-api
 Methane - https://global-warming.org/api/methane-api

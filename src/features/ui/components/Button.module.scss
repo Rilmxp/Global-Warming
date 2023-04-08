@@ -1,3 +1,5 @@
+@import "../../../styles/config";
+
 .button {
   all: unset;
   align-self: end;
@@ -5,34 +7,38 @@
   padding: 7px 0px;
   text-align: center;
   border-radius: 18px;
-  border: 1px solid black;
-  background-color: lightblue;
+
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+
+  &:hover {
+    // slightly lift card
+    top: -5px;
+  }
 }
 
-.temperatureBtn {
+.temperature {
   @extend .button;
-  background-color: #f12711; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #f5af19,
-    #f12711
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #f5af19,
-    #f12711
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  @include temperature-gradient;
 }
 
-//   // background: #f12711; /* fallback for old browsers */
-//   // background: -webkit-linear-gradient(
-//   //   to right,
-//   //   #f5af19,
-//   //   #f12711
-//   // ); /* Chrome 10-25, Safari 5.1-6 */
-//   // background: linear-gradient(
-//   //   to right,
-//   //   #f5af19,
-//   //   #f12711
-//   // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-// }
+.carbonDioxide {
+  @extend .button;
+  @include carbon-dioxide-gradient;
+}
+
+.methane {
+  @extend .button;
+  @include methane-gradient;
+}
+
+.nitrousOxide {
+  @extend .button;
+  @include nitrous-oxide-gradient;
+}
+
+.polarIce {
+  @extend .button;
+  @include polar-ice-gradient;
+}
