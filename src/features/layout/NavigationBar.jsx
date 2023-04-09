@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { nanoid } from "nanoid";
 
 import { Link, useNavigate } from "react-router-dom";
 
@@ -17,7 +18,7 @@ function NavigationBar() {
     <>
       <Navbar bg="light" expand="md">
         <Container fluid>
-          <Link className={styles.brandLink} to="./home">
+          <Link className={styles.brandLink} to="/">
             <Navbar.Brand>
               <img
                 alt="planet Earth"
@@ -45,6 +46,7 @@ function NavigationBar() {
                 {contentData.map((item) => {
                   return (
                     <Nav.Link
+                      key={nanoid()}
                       href={item.link}
                       className={styles[item.cssClass]}
                     >
