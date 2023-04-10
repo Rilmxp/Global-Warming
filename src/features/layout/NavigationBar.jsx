@@ -4,7 +4,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { nanoid } from "nanoid";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import contentData from "../../contentData";
 
@@ -12,7 +13,11 @@ import styles from "./NavigationBar.module.scss";
 import logo from "../../assets/images/logo.png";
 
 function NavigationBar() {
-  const navigate = useNavigate();
+  // manage the opening/closing of canva
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const toggleShow = () => setShow(!show);
 
   return (
     <>
@@ -30,28 +35,34 @@ function NavigationBar() {
               Global Warming
             </Navbar.Brand>
           </Link>
-          <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md" />
+          <Navbar.Toggle
+            aria-controls="offcanvasNavbar-expand-md"
+            onClick={toggleShow}
+          />
           <Navbar.Offcanvas
             id="offcanvasNavbar-expand-md"
             aria-labelledby="offcanvasNavbarLabel-expand-md"
             placement="end"
+            show={show}
           >
-            <Offcanvas.Header closeButton>
+            <Offcanvas.Header closeButton onClick={handleClose}>
               <Offcanvas.Title id="offcanvasNavbarLabel-expand-md">
                 Global Warming
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
+                {/* links are dinamically created through a loop from contentData.js. */}
                 {contentData.map((item) => {
                   return (
-                    <Nav.Link
+                    <Link
+                      to={item.link}
                       key={nanoid()}
-                      href={item.link}
-                      className={styles[item.cssClass]}
+                      className={`${styles[item.cssClass]} nav-link`}
+                      onClick={handleClose}
                     >
                       {item.title}
-                    </Nav.Link>
+                    </Link>
                   );
                 })}
               </Nav>
