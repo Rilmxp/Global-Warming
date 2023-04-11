@@ -18,6 +18,3 @@ https://blog.logrocket.com/react-scroll-animations-framer-motion/
 
 “Education is the most powerful weapon which you can use to change the world.”
 -Nelson Mandela
-
-TEMPERATURE
-Right now, annual global average temperature is about 1.1° Celsius hotter than pre-industrial levels.
