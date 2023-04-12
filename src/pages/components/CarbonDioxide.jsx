@@ -1,5 +1,11 @@
+import { MainTransitionAnimationWrapper } from "../../features/configuration";
+
 const CarbonDioxide = () => {
-  return <h1>CarbonDioxide</h1>;
+  return (
+    <MainTransitionAnimationWrapper>
+      <h1>CarbonDioxide</h1>
+    </MainTransitionAnimationWrapper>
+  );
 };
 
 export default CarbonDioxide;

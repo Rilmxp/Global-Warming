@@ -7,7 +7,7 @@ import { nanoid } from "nanoid";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import contentData from "../../contentData";
+import { contentData } from "../../contentData";
 
 import styles from "./NavigationBar.module.scss";
 import logo from "../../assets/images/logo.png";

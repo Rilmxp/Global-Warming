@@ -44,4 +44,36 @@ const contentData = [
   },
 ];
 
-export default contentData;
+const quotations = [
+  {
+    quotation:
+      "What you do makes a difference, and you have to decide what kind of difference you want to make.",
+    author: "Dr. Jane Goodall",
+  },
+  {
+    quotation:
+      "Climate change isn't something people get to choose to believe or not: it's happening.",
+    author: "Matt Gaetz",
+  },
+  {
+    quotation: "When the well is dry, we know the worth of water.",
+    author: "Benjamin Franklin",
+  },
+  {
+    quotation:
+      "Preservation of our environment is not a liberal or conservative challenge, it's common sense.",
+    author: "Ronald Reagan",
+  },
+  {
+    quotation:
+      "Education is the most powerful weapon which you can use to change the world.",
+    author: "Nelson Mandela",
+  },
+  {
+    quotation:
+      "Earth provides enough to satisfy every man's need, but not every man's greed.",
+    author: "Mahatma Gandhi",
+  },
+];
+
+export { contentData, quotations };

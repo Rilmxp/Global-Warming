@@ -1,14 +1,13 @@
 import { Banner } from "../../features/ui";
 import FactorsContainer from "../../features/containers/components/FactorsContainer";
+import { MainTransitionAnimationWrapper } from "../../features/configuration";
 
 const Home = () => {
   return (
-    <>
-      <main>
-        <Banner />
-        <FactorsContainer />
-      </main>
-    </>
+    <MainTransitionAnimationWrapper>
+      <Banner />
+      <FactorsContainer />
+    </MainTransitionAnimationWrapper>
   );
 };
 

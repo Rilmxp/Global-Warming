@@ -1,5 +1,11 @@
+import { MainTransitionAnimationWrapper } from "../../features/configuration";
+
 const Temperature = () => {
-  return <h1>Temperature</h1>;
+  return (
+    <MainTransitionAnimationWrapper>
+      <h1>Temperature</h1>
+    </MainTransitionAnimationWrapper>
+  );
 };
 
 export default Temperature;

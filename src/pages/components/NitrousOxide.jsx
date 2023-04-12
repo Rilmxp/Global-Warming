@@ -1,5 +1,11 @@
+import { MainTransitionAnimationWrapper } from "../../features/configuration";
+
 const NitrousOxide = () => {
-  return <h1>NitrousOxide</h1>;
+  return (
+    <MainTransitionAnimationWrapper>
+      <h1>NitrousOxide</h1>
+    </MainTransitionAnimationWrapper>
+  );
 };
 
 export default NitrousOxide;

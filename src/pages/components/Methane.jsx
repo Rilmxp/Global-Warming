@@ -1,5 +1,11 @@
+import { MainTransitionAnimationWrapper } from "../../features/configuration";
+
 const Methane = () => {
-  return <h1>Methane</h1>;
+  return (
+    <MainTransitionAnimationWrapper>
+      <h1>Methane</h1>
+    </MainTransitionAnimationWrapper>
+  );
 };
 
 export default Methane;

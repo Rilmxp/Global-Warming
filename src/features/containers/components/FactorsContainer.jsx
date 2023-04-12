@@ -1,10 +1,11 @@
 import Factor from "./Factor";
-import dataContent from "../../../contentData";
+import { contentData } from "../../../contentData";
+import styles from "./FactorsContainer.module.scss";
 
 const FactorsContainer = () => {
   return (
-    <section>
-      {dataContent.map((item, index) => {
+    <section className={styles.container}>
+      {contentData.map((item, index) => {
         return <Factor key={index} content={item} />;
       })}
     </section>
