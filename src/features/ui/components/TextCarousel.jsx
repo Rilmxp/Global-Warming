@@ -1,5 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
-import { quotations } from "../../../contentData";
+import { quotations } from "../../../data/contentData";
 
 import styles from "./TextCarousel.module.scss";
 

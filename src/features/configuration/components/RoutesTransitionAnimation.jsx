@@ -10,6 +10,8 @@ import {
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
+
+// configures Routes with useLocation so motion-framer can animate routes transition.
 const RoutesTransitionAnimation = () => {
   const location = useLocation();
   return (

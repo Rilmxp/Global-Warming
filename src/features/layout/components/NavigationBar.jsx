@@ -7,10 +7,10 @@ import { nanoid } from "nanoid";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { contentData } from "../../contentData";
+import { contentData } from "../../../data/contentData";
 
 import styles from "./NavigationBar.module.scss";
-import logo from "../../assets/images/logo.png";
+import logo from "../../../assets/images/logo.png";
 
 function NavigationBar() {
   // manage the opening/closing of canva

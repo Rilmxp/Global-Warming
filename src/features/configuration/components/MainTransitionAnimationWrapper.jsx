@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 
+// Sets the page transition for all routers in only one place.
 const MainTransitionAnimationWrapper = ({ children }) => {
   return (
     <motion.main

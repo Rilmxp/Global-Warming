@@ -1,5 +1,5 @@
 import Factor from "./Factor";
-import { contentData } from "../../../contentData";
+import { contentData } from "../../../data/contentData";
 import styles from "./FactorsContainer.module.scss";
 
 const FactorsContainer = () => {
