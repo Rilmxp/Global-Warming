@@ -44,6 +44,10 @@ body {
   font-family: "Montserrat", "Arial", sans-serif;
 }
 
+main {
+  min-height: 90vh;
+}
+
 // MIXINS //
 
 // Creates a gradient with two given colors. used below to create a gradient for each climate change factor.

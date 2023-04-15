@@ -6,9 +6,8 @@ const graphDataApi = axios.create({
 
 // Params: factor is temperature, carbonDioxie, methane etc.
 const getGraphData = async (factor) => {
-  const response = await graphDataApi.get(factor);
-  console.log("axios", response.data);
-  return response.data;
+  const response = await graphDataApi.get(factor + "-api");
+  return response.data.result;
 };
 
 export { getGraphData };

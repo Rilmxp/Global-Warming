@@ -1,0 +1,17 @@
+@import "../../../styles/config";
+
+.graphContainer {
+  text-align: center;
+  //   margin: 1rem;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+  //   overflow-x: scroll;
+}
+
+.graph {
+  display: flex;
+  justify-content: space-around;
+  overflow-x: scroll;
+}
