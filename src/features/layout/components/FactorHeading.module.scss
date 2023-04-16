@@ -1,0 +1,39 @@
+@import "../../../styles/config";
+
+.header {
+  font-weight: 900;
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.temperature {
+  @extend .header;
+  @include temperature-gradient;
+  @include crop-text-background;
+}
+
+.carbonDioxide {
+  @extend .header;
+  @include carbon-dioxide-gradient;
+  @include crop-text-background;
+}
+
+.methane {
+  @extend .header;
+  @include methane-gradient;
+  @include crop-text-background;
+}
+
+.nitrousOxide {
+  @extend .header;
+  @include nitrous-oxide-gradient;
+  @include crop-text-background;
+}
+
+.polarIce {
+  @extend .header;
+  @include polar-ice-gradient;
+  @include crop-text-background;
+}

@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getGraphData } from "../../../api/graphDataApi";
 import {
   LineChart,
@@ -13,7 +13,6 @@ import {
 import styles from "./TemperatureChart.module.scss";
 
 const TemperatureChart = () => {
-  //   const queryClient = useQueryClient(); // the client provided to QueryProvider in index.jsx
   const {
     isLoading,
     isError,
@@ -59,29 +58,29 @@ const TemperatureChart = () => {
     });
     content = (
       <LineChart
-        width={500}
+        width={340}
         height={300}
         data={finalData}
         margin={{
-          top: 5,
-          right: 35,
-          left: 70,
-          bottom: 5,
+          top: 0,
+          right: 0,
+          left: 0,
+          bottom: 0,
         }}
       >
-        <CartesianGrid strokeDasharray="2 2" />
+        <CartesianGrid strokeDasharray="1 1" />
         <XAxis dataKey="time" />
         <YAxis type="number" domain={["dataMin - 0.3", "dataMax + 0.1"]} />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="land" stroke="#8884d8" dot={false} />
+        <Line type="monotone" dataKey="land" stroke="#f12711" dot={false} />
       </LineChart>
     );
   }
 
   return (
     <section className={styles.graphContainer}>
-      <h2>Global temperature anomalies from 1980 to present</h2>
+      <h3>Global temperature anomalies from 1980 to present</h3>
 
       <div className={styles.graph}>{content}</div>
     </section>

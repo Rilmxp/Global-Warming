@@ -1,7 +1,18 @@
 @import "../../../styles/config";
 
 .graphContainer {
+  // scroll-snap-align: center;
+
   text-align: center;
+  background-color: rgb(248, 249, 250);
+  margin: 1rem;
+  padding: 1rem 0rem;
+  // border: 1px solid $color-temperature1;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   //   margin: 1rem;
   //   display: flex;
   //   flex-direction: column;
@@ -13,5 +24,19 @@
 .graph {
   display: flex;
   justify-content: space-around;
-  overflow-x: scroll;
+  overflow-x: auto;
+  margin: 1rem 1.5rem 1rem 1.5rem;
+  scroll-snap-type: x;
+  scroll-snap-align: center;
+  // scroll-snap-align: center;
+  .recharts-wrapper {
+    background-color: red;
+  }
+}
+
+.line {
+  // scroll-snap-align: center;
+  // color: red;
+  // @include temperature-gradient;
+  // @include crop-text-background;
 }

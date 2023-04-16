@@ -6,6 +6,6 @@ Methane - https://global-warming.org/api/methane-api
 Nitrous Oxide - https://global-warming.org/api/nitrous-oxide-api
 Polar ice - https://global-warming.org/api/arctic-api
 
-TO DO: - Search for API for countries' footprint, darkMode
+TO DO: - Loader, API for countries' footprint, darkMode, create error page
 
 Recharts
