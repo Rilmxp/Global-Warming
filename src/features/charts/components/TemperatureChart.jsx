@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getGraphData } from "../../../api/graphDataApi";
 import {
+  ResponsiveContainer,
   LineChart,
   Line,
   XAxis,
@@ -8,6 +9,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  Label,
 } from "recharts";
 
 import styles from "./TemperatureChart.module.scss";
@@ -57,30 +59,67 @@ const TemperatureChart = () => {
       return { ...item, time };
     });
     content = (
-      <LineChart
-        width={340}
-        height={300}
-        data={finalData}
-        margin={{
-          top: 0,
-          right: 0,
-          left: 0,
-          bottom: 0,
-        }}
-      >
-        <CartesianGrid strokeDasharray="1 1" />
-        <XAxis dataKey="time" />
-        <YAxis type="number" domain={["dataMin - 0.3", "dataMax + 0.1"]} />
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="land" stroke="#f12711" dot={false} />
-      </LineChart>
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+          // width={300}
+          // height={500}
+          data={finalData}
+          margin={{
+            top: 5,
+            right: 55,
+            left: 0,
+            bottom: 25,
+          }}
+        >
+          <defs>
+            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#f12711" stopOpacity={1} />
+              <stop offset="95%" stopColor="#f5af19" stopOpacity={1} />
+            </linearGradient>
+          </defs>
+          <CartesianGrid
+            vertical={false}
+            horizontal={false}
+            strokeDasharray="1"
+            stroke="black"
+          />
+          <XAxis dataKey="time">
+            <Label
+              value="Period from 1980 to present"
+              offset={10}
+              position="bottom"
+            />
+          </XAxis>
+          <YAxis
+            type="number"
+            domain={["dataMin - 0.3"]}
+            tickCount="4"
+            // tickLine={false}
+            // tickMargin="5"
+          ></YAxis>
+          <Tooltip
+            wrapperStyle={{ border: "1px solid blue" }}
+            contentStyle={{ backgroundColor: "lightblue" }}
+            itemStyle={{ color: "blue" }}
+            cursor={false}
+          />
+          {/* <Legend /> */}
+          <Line
+            type="linear"
+            dataKey="land"
+            stroke="url(#colorUv)"
+            strokeWidth={1.5}
+            dot={false}
+            // activeDot={{ r: 3 }}
+          />
+        </LineChart>
+      </ResponsiveContainer>
     );
   }
 
   return (
     <section className={styles.graphContainer}>
-      <h3>Global temperature anomalies from 1980 to present</h3>
+      <h4>Global temperature anomalies in Celsius</h4>
 
       <div className={styles.graph}>{content}</div>
     </section>
