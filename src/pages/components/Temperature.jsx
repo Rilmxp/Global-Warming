@@ -6,7 +6,7 @@ const Temperature = () => {
   return (
     <MainTransitionAnimationWrapper>
       <FactorHeading title={"Temperature"} cssClass={"temperature"} />
-      {/* <h1 className={styles.temperature}>Temperature</h1> */}
+
       <TemperatureChart />
     </MainTransitionAnimationWrapper>
   );

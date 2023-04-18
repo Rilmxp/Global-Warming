@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getGraphData } from "../../../api/graphDataApi";
+import { motion } from "framer-motion";
 import {
   ResponsiveContainer,
   LineChart,
@@ -11,6 +12,8 @@ import {
   Legend,
   Label,
 } from "recharts";
+
+import { Loader, ErrorMessage } from "../../ui/index.js";
 
 import styles from "./TemperatureChart.module.scss";
 
@@ -25,11 +28,15 @@ const TemperatureChart = () => {
     queryFn: () => getGraphData("temperature"),
   });
 
+  const tooltipStyles = {
+    // backgroundColor: props.darkMode ? "#222222" : "#cccccc",
+  };
+
   let content;
 
-  if (isLoading) {
-    content = <p>Loading...</p>;
-  }
+  // if (isLoading) {
+  //   content = <Loader />;
+  // }
 
   if (isError) {
     content = <p>Graph data not available. Please try again later</p>;
@@ -59,10 +66,8 @@ const TemperatureChart = () => {
       return { ...item, time };
     });
     content = (
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%">
         <LineChart
-          // width={300}
-          // height={500}
           data={finalData}
           margin={{
             top: 5,
@@ -79,13 +84,13 @@ const TemperatureChart = () => {
           </defs>
           <CartesianGrid
             vertical={false}
-            horizontal={false}
+            horizontal={true}
             strokeDasharray="1"
-            stroke="black"
+            stroke="lightgray"
           />
           <XAxis dataKey="time">
             <Label
-              value="Period from 1980 to present"
+              value="Period from 1880 to present"
               offset={10}
               position="bottom"
             />
@@ -98,17 +103,21 @@ const TemperatureChart = () => {
             // tickMargin="5"
           ></YAxis>
           <Tooltip
-            wrapperStyle={{ border: "1px solid blue" }}
-            contentStyle={{ backgroundColor: "lightblue" }}
-            itemStyle={{ color: "blue" }}
+            wrapperStyle={{
+              outline: "none",
+              border: "1.5px solid #f5af19",
+              borderRadius: "5px",
+            }}
+            contentStyle={{ border: "none", borderRadius: "inherit" }}
+            itemStyle={{ color: "#f12711" }}
             cursor={false}
+            formatter={(value, name, props) => [value, "Celsius"]}
           />
-          {/* <Legend /> */}
           <Line
-            type="linear"
+            type="natural"
             dataKey="land"
             stroke="url(#colorUv)"
-            strokeWidth={1.5}
+            strokeWidth={2}
             dot={false}
             // activeDot={{ r: 3 }}
           />
@@ -118,10 +127,20 @@ const TemperatureChart = () => {
   }
 
   return (
-    <section className={styles.graphContainer}>
-      <h4>Global temperature anomalies in Celsius</h4>
-
-      <div className={styles.graph}>{content}</div>
+    <section>
+      {isLoading && <Loader />}
+      {isError && <ErrorMessage />}
+      {graphData && (
+        <motion.article
+          className={styles.graphContainer}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+        >
+          <h4>Global temperature anomalies in Celsius</h4>
+          <div className={styles.graph}>{content}</div>
+        </motion.article>
+      )}
     </section>
   );
 };

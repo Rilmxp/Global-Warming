@@ -6,6 +6,18 @@ Methane - https://global-warming.org/api/methane-api
 Nitrous Oxide - https://global-warming.org/api/nitrous-oxide-api
 Polar ice - https://global-warming.org/api/arctic-api
 
-TO DO: - Loader, , darkMode, create error page, API for countries' footprint
+LOADER: - Spinning world
 
-Recharts
+PER PAGE:
+
+- causes
+- effects
+- what you can do.
+
+CREATE ERROR PAGE:
+
+DARK MODE : const styles = {
+backgroundColor: props.darkMode ? "#222222" : "#cccccc",
+};
+
+API FOR COUNTRIES FOOTPRINT.
