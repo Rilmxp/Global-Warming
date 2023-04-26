@@ -1,7 +1,8 @@
 @import "../../../styles/config";
 
 .graphContainer {
-  height: 350px;
+  // height: 350px;
+  height: 50vh;
 
   display: flex;
   flex-direction: column;
@@ -12,8 +13,7 @@
   padding: 2rem 0rem;
   // border: 1px solid $color-temperature1;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   h4 {
     color: #808080;
     font-weight: bold;

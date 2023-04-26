@@ -11,8 +11,8 @@ const Factor = ({ content }) => {
   return (
     <motion.article
       className={styles.factorArticle}
-      transition={{ duration: 0.5 }}
       initial={{ opacity: 0, scale: 0.5 }}
+      transition={{ duration: 0.5 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
     >

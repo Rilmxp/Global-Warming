@@ -34,10 +34,6 @@ const TemperatureChart = () => {
 
   let content;
 
-  // if (isLoading) {
-  //   content = <Loader />;
-  // }
-
   if (isError) {
     content = <p>Graph data not available. Please try again later</p>;
   }
@@ -77,7 +73,7 @@ const TemperatureChart = () => {
           }}
         >
           <defs>
-            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="colorTemp" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#f12711" stopOpacity={1} />
               <stop offset="95%" stopColor="#f5af19" stopOpacity={1} />
             </linearGradient>
@@ -116,7 +112,7 @@ const TemperatureChart = () => {
           <Line
             type="natural"
             dataKey="land"
-            stroke="url(#colorUv)"
+            stroke="url(#colorTemp)"
             strokeWidth={2}
             dot={false}
             // activeDot={{ r: 3 }}
@@ -133,8 +129,8 @@ const TemperatureChart = () => {
       {graphData && (
         <motion.article
           className={styles.graphContainer}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 2, ease: "easeInOut" }}
         >
           <h4>Global temperature anomalies in Celsius</h4>

@@ -1,11 +1,36 @@
 const contentData = [
   {
-    title: "Temperature",
+    title: "temperature",
     dataSource: "https://en.wikipedia.org/wiki/Climate_change",
     textContent:
       "Surface temperatures are rising by about 0.2 °C per decade,with 2020 reaching a temperature of 1.2 °C above the pre-industrial era.Since1950, the number of cold days and nights has decreased, and the number of warm days and nights has increased.",
     link: "/temperature",
     cssClass: "temperature",
+    facts: [
+      {
+        fact: "causes",
+        factsList: [
+          "Emission of greenhouse gases into the atmosphere.",
+          "Decreasing reflective surfaces of the Earth (glaciars)",
+        ],
+      },
+      {
+        fact: "effects",
+        factsList: [
+          "Greenhouse gases blanket the Earth and trap the sun's heat.",
+          "Wildfires ignition and propagation.",
+          "Warming and rising of oceans.",
+        ],
+      },
+      {
+        fact: "what you can do",
+        factsList: [
+          "Plant trees wherever you can. Community gardens and green roofs can help cool urban heat islands.",
+          "Switch to greener energy sources like wind turbines and solar panels.",
+          "Think green before you buy. Consider a product’s durability, sustainability, and ease of recycling when making a purchase.",
+        ],
+      },
+    ],
   },
   {
     title: "Carbon Dioxide",

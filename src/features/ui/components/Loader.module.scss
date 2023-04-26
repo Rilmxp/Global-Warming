@@ -11,7 +11,7 @@
 
 .container {
   width: 100%;
-  height: 20vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,6 +21,6 @@
 .earthIcon {
   animation: loading 5s linear infinite;
   font-size: 3rem;
-  color: #3aa3aa;
+  color: #808080;
   margin-bottom: 1rem;
 }

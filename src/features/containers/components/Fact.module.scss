@@ -1,0 +1,25 @@
+@import "../../../styles/config";
+
+.factsHeading {
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  width: fit-content;
+  @include temperature-gradient;
+  @include crop-text-background;
+}
+
+.factsList {
+  list-style-type: none;
+  margin-bottom: 2rem;
+
+  li {
+    margin-bottom: 1rem;
+  }
+}
+
+.factsIcon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #808080;
+}

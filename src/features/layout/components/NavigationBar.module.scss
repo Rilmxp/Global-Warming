@@ -3,7 +3,10 @@
 .brandLink {
   text-decoration: none;
 }
+
 .temperature {
+  text-transform: capitalize;
+
   &:hover {
     @include temperature-gradient;
     @include crop-text-background;
@@ -11,6 +14,8 @@
 }
 
 .carbonDioxide {
+  text-transform: capitalize;
+
   &:hover {
     @include carbon-dioxide-gradient;
     @include crop-text-background;
@@ -18,6 +23,8 @@
 }
 
 .methane {
+  text-transform: capitalize;
+
   &:hover {
     @include methane-gradient;
     @include crop-text-background;
@@ -25,6 +32,8 @@
 }
 
 .nitrousOxide {
+  text-transform: capitalize;
+
   &:hover {
     @include nitrous-oxide-gradient;
     @include crop-text-background;
@@ -32,6 +41,8 @@
 }
 
 .polarIce {
+  text-transform: capitalize;
+
   &:hover {
     @include polar-ice-gradient;
     @include crop-text-background;
