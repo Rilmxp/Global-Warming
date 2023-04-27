@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getGraphData } from "../../../api/graphDataApi";
 import { motion } from "framer-motion";
 import {
@@ -18,12 +18,9 @@ import { Loader, ErrorMessage } from "../../ui/index.js";
 import styles from "./TemperatureChart.module.scss";
 
 const TemperatureChart = () => {
-  const {
-    isLoading,
-    isError,
-    error, // if theres an error it will return the error
-    data: graphData,
-  } = useQuery({
+  // const queryClient = useQueryClient(); // the client provided to QueryProvider in index.jsx
+
+  const { isLoading, isError, error, data } = useQuery({
     queryKey: ["temperatureCache"],
     queryFn: () => getGraphData("temperature"),
   });
@@ -34,11 +31,9 @@ const TemperatureChart = () => {
 
   let content;
 
-  if (isError) {
-    content = <p>Graph data not available. Please try again later</p>;
-  }
-
   if (!isLoading && !isError) {
+    const graphData = data.result;
+
     // filter specific year ranges to display
     const selectedYears = graphData.filter((item) => {
       let year = parseInt(item.time);
@@ -101,7 +96,7 @@ const TemperatureChart = () => {
           <Tooltip
             wrapperStyle={{
               outline: "none",
-              border: "1.5px solid #f5af19",
+              border: "1.4px solid #f5af19",
               borderRadius: "5px",
             }}
             contentStyle={{ border: "none", borderRadius: "inherit" }}
@@ -126,7 +121,7 @@ const TemperatureChart = () => {
     <section>
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
-      {graphData && (
+      {data && (
         <motion.article
           className={styles.graphContainer}
           initial={{ opacity: 0 }}

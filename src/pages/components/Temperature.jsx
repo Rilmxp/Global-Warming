@@ -1,6 +1,6 @@
 import { MainTransitionAnimationWrapper } from "../../features/configuration";
-import { TemperatureChart } from "../../features/charts";
 import { FactorHeading } from "../../features/layout";
+import { TemperatureChart } from "../../features/charts";
 import { Facts } from "../../features/containers";
 
 const Temperature = () => {

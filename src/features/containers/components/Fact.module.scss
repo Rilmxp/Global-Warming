@@ -2,10 +2,38 @@
 
 .factsHeading {
   font-weight: 900;
-  margin-bottom: 1rem;
-  text-transform: capitalize;
   width: fit-content;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.temperature {
+  @extend .factsHeading;
   @include temperature-gradient;
+  @include crop-text-background;
+}
+
+.carbonDioxide {
+  @extend .factsHeading;
+  @include carbon-dioxide-gradient;
+  @include crop-text-background;
+}
+
+.methane {
+  @extend .factsHeading;
+  @include methane-gradient;
+  @include crop-text-background;
+}
+
+.nitrousOxide {
+  @extend .factsHeading;
+  @include nitrous-oxide-gradient;
+  @include crop-text-background;
+}
+
+.polarIce {
+  @extend .factsHeading;
+  @include polar-ice-gradient;
   @include crop-text-background;
 }
 

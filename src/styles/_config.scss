@@ -38,7 +38,7 @@ $color-nitrous-oxide1: #243b55;
 $color-nitrous-oxide2: #141e30;
 
 $color-polar-ice1: #1c92d2;
-$color-polar-ice2: #f2fcfe;
+$color-polar-ice2: #bdedf5;
 
 body {
   font-family: "Montserrat", "Arial", sans-serif;
@@ -87,4 +87,4 @@ main {
 
 @mixin polar-ice-gradient {
   @include color-factor($color-polar-ice1, $color-polar-ice2);
-} ;
+}

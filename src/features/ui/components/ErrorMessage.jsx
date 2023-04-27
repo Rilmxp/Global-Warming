@@ -11,7 +11,7 @@ const ErrorMessage = () => {
     >
       <p>
         Unable to elaborate graph. Source data currently unavailable. Please try
-        again later
+        again later.
       </p>
     </motion.div>
   );

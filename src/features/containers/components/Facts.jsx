@@ -13,7 +13,12 @@ const Facts = ({ factor }) => {
     <section className={styles.factsArticles}>
       {facts.map((item) => {
         return (
-          <Fact fact={item.fact} listItems={item.factsList} key={nanoid()} />
+          <Fact
+            fact={item.fact}
+            listItems={item.factsList}
+            key={nanoid()}
+            cssClass={factorFound.cssClass}
+          />
         );
       })}
     </section>

@@ -1,9 +1,13 @@
 import { MainTransitionAnimationWrapper } from "../../features/configuration";
+import { FactorHeading } from "../../features/layout";
+import { Facts } from "../../features/containers";
 
 const PolarIce = () => {
   return (
     <MainTransitionAnimationWrapper>
-      <h1>PolarIce</h1>
+      <FactorHeading title={"polar ice"} cssClass={"polarIce"} />
+
+      <Facts factor={"polar ice"} />
     </MainTransitionAnimationWrapper>
   );
 };

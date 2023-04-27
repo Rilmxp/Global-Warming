@@ -1,9 +1,12 @@
 import { MainTransitionAnimationWrapper } from "../../features/configuration";
+import { FactorHeading } from "../../features/layout";
+import { Facts } from "../../features/containers";
 
 const NitrousOxide = () => {
   return (
     <MainTransitionAnimationWrapper>
-      <h1>NitrousOxide</h1>
+      <FactorHeading title={"nitrous oxide"} cssClass={"nitrousOxide"} />
+      <Facts factor={"nitrous oxide"} />
     </MainTransitionAnimationWrapper>
   );
 };

@@ -5,7 +5,7 @@ import { GiMagnifyingGlass } from "react-icons/gi";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { motion } from "framer-motion";
 
-const Fact = ({ fact, listItems }) => {
+const Fact = ({ fact, listItems, cssClass }) => {
   // motion framer animation
   const variants = {
     visible: {
@@ -37,7 +37,7 @@ const Fact = ({ fact, listItems }) => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <h4 className={styles.factsHeading}>{fact}</h4>
+      <h4 className={styles[cssClass]}>{fact}</h4>
       <ul className={styles.factsList}>
         {listItems.map((item) => {
           return (

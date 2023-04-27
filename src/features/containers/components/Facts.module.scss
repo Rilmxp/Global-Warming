@@ -3,3 +3,10 @@
 .factsArticles {
   margin: 0 1rem;
 }
+
+@media only screen and (min-width: 700px) {
+  .factsArticles {
+    width: 75%;
+    margin: 2rem auto;
+  }
+}
