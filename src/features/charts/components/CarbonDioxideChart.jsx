@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getGraphData } from "../../../api/graphDataApi";
 import { motion } from "framer-motion";
 import { Loader, ErrorMessage } from "../../ui/index.js";
+import colorVariables from "../../../styles/_exports.module.scss";
 
 import {
   ResponsiveContainer,
@@ -15,7 +16,7 @@ import {
   Legend,
 } from "recharts";
 
-import styles from "./CarbonDioxideChart.module.scss";
+import styles from "./GraphsGlobal.module.scss";
 
 const CarbonDioxideChart = () => {
   const { isLoading, isError, error, data } = useQuery({
@@ -27,12 +28,9 @@ const CarbonDioxideChart = () => {
 
   if (!isLoading && !isError) {
     const graphData = data.co2;
-    console.log(graphData);
     const annualEmissions = graphData.filter((item) => {
       return item.month === "1" && item.day === "20";
     });
-
-    console.log(annualEmissions);
 
     content = (
       <ResponsiveContainer width="100%">
@@ -47,8 +45,16 @@ const CarbonDioxideChart = () => {
         >
           <defs>
             <linearGradient id="co2" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#3f4c6b" stopOpacity={0.8} />
-              <stop offset="95%" stopColor="#606c88" stopOpacity={0} />
+              <stop
+                offset="5%"
+                stopColor={colorVariables.colorCarbonDioxide1}
+                stopOpacity={0.8}
+              />
+              <stop
+                offset="95%"
+                stopColor={colorVariables.colorCarbonDioxide2}
+                stopOpacity={0}
+              />
             </linearGradient>
           </defs>
           <XAxis dataKey="year">
@@ -58,7 +64,7 @@ const CarbonDioxideChart = () => {
               position="bottom"
             />
           </XAxis>
-          <YAxis dataKey="trend" />
+          <YAxis dataKey="trend" ticks={["150", "300", "450"]} />
           <CartesianGrid
             vertical={true}
             horizontal={true}

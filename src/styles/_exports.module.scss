@@ -1,0 +1,20 @@
+@import "config.scss";
+
+// colors will be necessary for direct import into js files fro <defs> in graphs.
+
+:export {
+  colorTemperature1: $color-temperature1;
+  colorTemperature2: $color-temperature2;
+
+  colorCarbonDioxide1: $color-carbon-dioxide1;
+  colorCarbonDioxide2: $color-carbon-dioxide2;
+
+  colorMethane1: $color-methane1;
+  colorMethane2: $color-methane2;
+
+  colorNitrousOxide1: $color-nitrous-oxide1;
+  colorNitrousOxide2: $color-nitrous-oxide2;
+
+  colorPolarIce1: $color-polar-ice1;
+  colorPolarIce2: $color-polar-ice2;
+}

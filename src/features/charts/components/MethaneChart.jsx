@@ -1,10 +1,11 @@
+import styles from "./GraphsGlobal.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { getGraphData } from "../../../api/graphDataApi";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import {
   ResponsiveContainer,
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -16,48 +17,33 @@ import {
 import { Loader, ErrorMessage } from "../../ui/index.js";
 
 import colorVariables from "../../../styles/_exports.module.scss";
-import styles from "./GraphsGlobal.module.scss";
 
-const TemperatureChart = () => {
+const MethaneChart = () => {
   const { isLoading, isError, error, data } = useQuery({
-    queryKey: ["temperatureCache"],
-    queryFn: () => getGraphData("temperature"),
+    queryKey: ["methaneCache"],
+    queryFn: () => getGraphData("methane"),
   });
 
-  const tooltipStyles = {
-    // backgroundColor: props.darkMode ? "#222222" : "#cccccc",
-  };
+  console.log(data);
 
   let content;
 
   if (!isLoading && !isError) {
-    const graphData = data.result;
-
-    // filter specific year ranges to display
-    const selectedYears = graphData.filter((item) => {
-      let year = parseInt(item.time);
-      let month;
-
-      // separate month (eg. 4 = january) from year (1980) 1980.04
-      let decimalPartOfYear = item.time.indexOf(".");
-      month = item.time.substring(decimalPartOfYear + 1);
-      // get only data from january each year
-      if (+month == 4) {
-        // from 1880 - 1980 get only 1 value per decade
-        if (+year >= 1880 && +year <= 1980 && +year % 10 === 0) return true;
-        // from 1980 get 1 value per year
-        if (+year > 1980 && +month === 4) return true;
+    const graphData = data.methane;
+    const annualEmissions = graphData.filter((item) => {
+      return item.date.endsWith("12");
+    });
+    const finalData = annualEmissions.filter((item, index) => {
+      if (index % 3 === 0 || index === annualEmissions.length - 1) {
+        return item;
       }
     });
+    console.log("annualEmissions", annualEmissions);
+    console.log("finalData", finalData);
 
-    // format year for correct display 1980.04 => 1980
-    const finalData = selectedYears.map((item) => {
-      let time = +parseInt(item.time);
-      return { ...item, time };
-    });
     content = (
       <ResponsiveContainer width="100%">
-        <LineChart
+        <BarChart
           data={finalData}
           margin={{
             top: 5,
@@ -67,15 +53,15 @@ const TemperatureChart = () => {
           }}
         >
           <defs>
-            <linearGradient id="colorTemp" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="colorMethane" x1="0" y1="0" x2="0" y2="1">
               <stop
                 offset="5%"
-                stopColor={colorVariables.colorTemperature2}
+                stopColor={colorVariables.colorMethane1}
                 stopOpacity={1}
               />
               <stop
                 offset="95%"
-                stopColor={colorVariables.colorTemperature1}
+                stopColor={colorVariables.colorMethane2}
                 stopOpacity={1}
               />
             </linearGradient>
@@ -86,9 +72,9 @@ const TemperatureChart = () => {
             strokeDasharray="1"
             stroke="lightgray"
           />
-          <XAxis dataKey="time">
+          <XAxis dataKey="date">
             <Label
-              value="Period from 1880 to present"
+              value="Five-yearly data from 1984 to present"
               offset={10}
               position="bottom"
             />
@@ -111,15 +97,17 @@ const TemperatureChart = () => {
             cursor={false}
             formatter={(value, name, props) => [value, "Celsius"]}
           />
-          <Line
+          <Bar
             type="natural"
-            dataKey="land"
-            stroke="url(#colorTemp)"
-            strokeWidth={2}
+            dataKey="average"
+            stroke={colorVariables.colorMethane1}
             dot={false}
             // activeDot={{ r: 3 }}
+            strokeWidth={1.5}
+            fillOpacity={1}
+            fill="url(#colorMethane)"
           />
-        </LineChart>
+        </BarChart>
       </ResponsiveContainer>
     );
   }
@@ -135,7 +123,7 @@ const TemperatureChart = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 2, ease: "easeInOut" }}
         >
-          <h4>Global temperature anomalies in Celsius</h4>
+          <h4>Methane levels in the atmosphere</h4>
           <div className={styles.graph}>{content}</div>
         </motion.article>
       )}
@@ -143,4 +131,4 @@ const TemperatureChart = () => {
   );
 };
 
-export default TemperatureChart;
+export default MethaneChart;

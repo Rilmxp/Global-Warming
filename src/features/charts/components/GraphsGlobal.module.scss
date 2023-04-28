@@ -1,8 +1,8 @@
 @import "../../../styles/config";
 
 .graphContainer {
-  // height: 350px;
-  height: 50vh;
+  height: 350px;
+  // height: 50vh;
 
   display: flex;
   flex-direction: column;
@@ -11,7 +11,6 @@
   text-align: center;
   margin: 1rem 1rem 2rem 1rem;
   padding: 2rem 0rem;
-  // border: 1px solid $color-temperature1;
   border-radius: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   h4 {
@@ -20,10 +19,6 @@
     margin-bottom: 1rem;
   }
 }
-
-// .errorMsg {
-//   text-align: center;
-// }
 
 .graph {
   width: 100%;
@@ -37,3 +32,5 @@
     margin: auto;
   }
 }
+
+// colors for graph lines gradients
