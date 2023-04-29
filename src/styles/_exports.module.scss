@@ -1,6 +1,6 @@
 @import "config.scss";
 
-// colors will be necessary for direct import into js files fro <defs> in graphs.
+// These exports will be necessary in graph Components for <defs> and tooltip inline styles as per ReCharts specifications since classes will simply not work.
 
 :export {
   colorTemperature1: $color-temperature1;
@@ -17,4 +17,8 @@
 
   colorPolarIce1: $color-polar-ice1;
   colorPolarIce2: $color-polar-ice2;
+
+  tooltipBorder: 1.4px solid;
+  tooltipOutline: none;
+  tooltipRadius: 5px;
 }

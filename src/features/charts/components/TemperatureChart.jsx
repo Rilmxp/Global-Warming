@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getGraphData } from "../../../api/graphDataApi";
 import { motion } from "framer-motion";
+import { Loader, ErrorMessage } from "../../ui/index.js";
 import {
   ResponsiveContainer,
   LineChart,
@@ -13,9 +14,7 @@ import {
   Label,
 } from "recharts";
 
-import { Loader, ErrorMessage } from "../../ui/index.js";
-
-import colorVariables from "../../../styles/_exports.module.scss";
+import graphInlineStyles from "../../../styles/_exports.module.scss";
 import styles from "./GraphsGlobal.module.scss";
 
 const TemperatureChart = () => {
@@ -24,8 +23,13 @@ const TemperatureChart = () => {
     queryFn: () => getGraphData("temperature"),
   });
 
-  const tooltipStyles = {
+  // css inline styles fro tooltip
+  const tooltipWrapperStyles = {
     // backgroundColor: props.darkMode ? "#222222" : "#cccccc",
+    border: graphInlineStyles.tooltipBorder,
+    outline: graphInlineStyles.tooltipOutline,
+    borderRadius: graphInlineStyles.tooltipRadius,
+    borderColor: graphInlineStyles.colorTemperature1,
   };
 
   let content;
@@ -70,12 +74,12 @@ const TemperatureChart = () => {
             <linearGradient id="colorTemp" x1="0" y1="0" x2="0" y2="1">
               <stop
                 offset="5%"
-                stopColor={colorVariables.colorTemperature2}
+                stopColor={graphInlineStyles.colorTemperature2}
                 stopOpacity={1}
               />
               <stop
                 offset="95%"
-                stopColor={colorVariables.colorTemperature1}
+                stopColor={graphInlineStyles.colorTemperature1}
                 stopOpacity={1}
               />
             </linearGradient>
@@ -88,28 +92,25 @@ const TemperatureChart = () => {
           />
           <XAxis dataKey="time">
             <Label
-              value="Period from 1880 to present"
+              value="Warming rate from 1880 to present"
               offset={10}
               position="bottom"
             />
           </XAxis>
           <YAxis
             type="number"
-            domain={["dataMin - 0.3"]}
+            // domain={["dataMin - 0.3"]}
             tickCount="4"
             // tickLine={false}
             // tickMargin="5"
           ></YAxis>
           <Tooltip
-            wrapperStyle={{
-              outline: "none",
-              border: "1.4px solid #f5af19",
-              borderRadius: "5px",
-            }}
+            wrapperStyle={tooltipWrapperStyles}
             contentStyle={{ border: "none", borderRadius: "inherit" }}
-            itemStyle={{ color: "#f12711" }}
+            itemStyle={{ color: graphInlineStyles.colorTemperature2 }}
             cursor={false}
-            formatter={(value, name, props) => [value, "Celsius"]}
+            formatter={(value) => [value, "Celsius"]}
+            labelFormatter={(value) => `Year : ${value}`}
           />
           <Line
             type="natural"

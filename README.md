@@ -6,6 +6,14 @@ Methane - https://global-warming.org/api/methane-api
 Nitrous Oxide - https://global-warming.org/api/nitrous-oxide-api
 Polar ice - https://global-warming.org/api/arctic-api
 
+TO DO:
+See if temperature response month can be got with "endsWith(04)"
+refactor animations and maybe graphs
+darkMode
+Controllare gramatica e contenuti.
+Valutare gestione risposta delle api sul file delle api.
+valutare timeout per risposta api and show error.
+
 PER PAGE:
 
 source of data https://www.un.org/, https://www.epa.gov/
@@ -109,10 +117,6 @@ WASTE: 2. 3. Reuse or repurpose itiems such as old clothing, cloth grocery bagas
 TRANSPORTATION: 1. 2 Energy efficient vehicle with higher miles per gallon. 3. Switch for electricle if you can. 4. Fewer trips like grouping errands and teleworking if available.
 WATER: It takes energy to pump, treat and heat water so lower consumption reduces greenhouse emissions. 1. Use water efficiently at home. Run clothes washer at full load and cold water and use dishwasher. 2. Check for water leaks. 3. Take shorter showers.
 
-CREATE ERROR PAGE:
-
 DARK MODE : const styles = {
 backgroundColor: props.darkMode ? "#222222" : "#cccccc",
 };
-
-API FOR COUNTRIES FOOTPRINT.

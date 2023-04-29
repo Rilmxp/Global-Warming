@@ -1,0 +1,49 @@
+.wrapper {
+  min-height: inherit;
+  background-image: url("../../../assets/images/planet-earth-small.jpg");
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  all: unset;
+  width: 170px;
+  padding: 7px 3px;
+  text-align: center;
+  border-radius: 20px;
+  border: 2px solid white;
+  transition: background-color ease 0.5s;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+.linkBtn {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+
+  &:hover {
+    color: white;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .wrapper {
+    background-image: url("../../../assets/images/planet-earth-big.jpg");
+  }
+}

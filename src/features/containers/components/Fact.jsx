@@ -2,7 +2,8 @@ import { nanoid } from "nanoid";
 import styles from "./Fact.module.scss";
 import { GiThermometerHot } from "react-icons/gi";
 import { GiMagnifyingGlass } from "react-icons/gi";
-import { HiOutlineLightBulb } from "react-icons/hi";
+import { GiLightBulb } from "react-icons/gi";
+// import { HiOutlineLightBulb } from "react-icons/hi";
 import { motion } from "framer-motion";
 
 const Fact = ({ fact, listItems, cssClass }) => {
@@ -25,7 +26,7 @@ const Fact = ({ fact, listItems, cssClass }) => {
       iconToDisplay = <GiThermometerHot className={styles.factsIcon} />;
       break;
     case "what you can do":
-      iconToDisplay = <HiOutlineLightBulb className={styles.factsIcon} />;
+      iconToDisplay = <GiLightBulb className={styles.factsIcon} />;
       break;
   }
 

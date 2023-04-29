@@ -1,56 +1,48 @@
-import styles from "./GraphsGlobal.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { getGraphData } from "../../../api/graphDataApi";
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { Loader, ErrorMessage } from "../../ui/index.js";
 import {
   ResponsiveContainer,
-  BarChart,
-  Bar,
+  AreaChart,
+  Area,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   Label,
 } from "recharts";
 
-import { Loader, ErrorMessage } from "../../ui/index.js";
-
 import graphInlineStyles from "../../../styles/_exports.module.scss";
+import styles from "./GraphsGlobal.module.scss";
 
-const MethaneChart = () => {
-  // css inline styles fro tooltip
+const NitrousxOxideChart = () => {
+  const { isLoading, isError, error, data } = useQuery({
+    queryKey: ["nitrousOxideCache"],
+    queryFn: () => getGraphData("nitrous-oxide"),
+  });
+
   const tooltipWrapperStyles = {
     // backgroundColor: props.darkMode ? "#222222" : "#cccccc",
     border: graphInlineStyles.tooltipBorder,
     outline: graphInlineStyles.tooltipOutline,
     borderRadius: graphInlineStyles.tooltipRadius,
-    borderColor: graphInlineStyles.colorMethane2,
+    borderColor: graphInlineStyles.colorNitrousOxide2,
   };
-
-  const { isLoading, isError, error, data } = useQuery({
-    queryKey: ["methaneCache"],
-    queryFn: () => getGraphData("methane"),
-  });
-
-  console.log(data);
 
   let content;
 
   if (!isLoading && !isError) {
-    const graphData = data.methane;
-    // get only the month of december eg 1984.12
+    const graphData = data.nitrous;
+
     const annualEmissions = graphData.filter((item) => {
-      return item.date.endsWith("12");
-    });
-    // get only ranges of 3 years time + last available year.
-    const threeYearlyData = annualEmissions.filter((item, index) => {
-      if (index % 3 === 0 || index === annualEmissions.length - 1) {
-        return item;
-      }
+      return item.date.endsWith(".1");
     });
 
-    const finalData = threeYearlyData.map((item) => {
+    console.log("graphData", graphData);
+    console.log("annualEmissions", annualEmissions);
+
+    const finalData = annualEmissions.map((item) => {
       let date;
       let average;
 
@@ -62,7 +54,7 @@ const MethaneChart = () => {
 
     content = (
       <ResponsiveContainer width="100%">
-        <BarChart
+        <AreaChart
           data={finalData}
           margin={{
             top: 5,
@@ -72,15 +64,15 @@ const MethaneChart = () => {
           }}
         >
           <defs>
-            <linearGradient id="colorMethane" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="colorNitrous" x1="0" y1="0" x2="0" y2="1">
               <stop
                 offset="5%"
-                stopColor={graphInlineStyles.colorMethane1}
+                stopColor={graphInlineStyles.colorNitrousOxide1}
                 stopOpacity={1}
               />
               <stop
                 offset="95%"
-                stopColor={graphInlineStyles.colorMethane2}
+                stopColor={graphInlineStyles.colorNitrousOxide2}
                 stopOpacity={1}
               />
             </linearGradient>
@@ -93,7 +85,7 @@ const MethaneChart = () => {
           />
           <XAxis dataKey="date">
             <Label
-              value="CH4 in parts per million since 1983"
+              value="Concentrations in parts per million"
               offset={10}
               position="bottom"
             />
@@ -101,30 +93,31 @@ const MethaneChart = () => {
           <YAxis
             type="number"
             domain={["auto", "auto"]}
-            interval="preserveStart"
-
+            // domain={["dataMin - 3.11", "dataMax + 3"]}
+            tickCount="4"
             // tickLine={false}
             // tickMargin="5"
           ></YAxis>
           <Tooltip
             wrapperStyle={tooltipWrapperStyles}
             contentStyle={{ border: "none", borderRadius: "inherit" }}
-            itemStyle={{ color: graphInlineStyles.colorMethane1 }}
-            cursor={false}
-            formatter={(value, name, props) => [value, "Ppm"]}
-            labelFormatter={(value, label, props) => `Year : ${value}`}
+            itemStyle={{ color: graphInlineStyles.colorNitrousOxide2 }}
+            cursor={true}
+            formatter={(value) => [value, "ppm"]}
+            labelFormatter={(value) => `Year : ${value}`}
           />
-          <Bar
-            type="natural"
+          <Area
+            type="linear"
             dataKey="average"
-            stroke={graphInlineStyles.colorMethane1}
-            dot={false}
+            // strokeWidth={2}
+            // dot={true}
             // activeDot={{ r: 3 }}
+            stroke={graphInlineStyles.colorCarbonDioxide1}
             strokeWidth={1.5}
             fillOpacity={1}
-            fill="url(#colorMethane)"
+            fill="url(#colorNitrous)"
           />
-        </BarChart>
+        </AreaChart>
       </ResponsiveContainer>
     );
   }
@@ -140,7 +133,7 @@ const MethaneChart = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 2, ease: "easeInOut" }}
         >
-          <h4>Methane levels in the atmosphere</h4>
+          <h4>Nitrous oxide levels</h4>
           <div className={styles.graph}>{content}</div>
         </motion.article>
       )}
@@ -148,4 +141,4 @@ const MethaneChart = () => {
   );
 };
 
-export default MethaneChart;
+export default NitrousxOxideChart;

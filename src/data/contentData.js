@@ -141,13 +141,13 @@ const contentData = [
     facts: [
       {
         fact: "causes",
-        factsList: ["Rise in temperature"],
+        factsList: ["Rise in temperature."],
       },
       {
         fact: "effects",
         factsList: [
           "Less reflective surfaces which leads to increasing heat waves.",
-          "Rising of sea level",
+          "Rising of sea level.",
           "Loss of artic wildlife and ecosystem.",
         ],
       },
