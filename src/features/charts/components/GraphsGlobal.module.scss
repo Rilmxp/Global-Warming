@@ -33,4 +33,10 @@
   }
 }
 
-// colors for graph lines gradients
+@media only screen and (min-width: 1400px) {
+  .graphContainer {
+    height: 450px;
+    width: 70%;
+    margin: auto;
+  }
+}

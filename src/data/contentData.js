@@ -3,7 +3,7 @@ const contentData = [
     title: "temperature",
     dataSource: "https://en.wikipedia.org/wiki/Climate_change",
     textContent:
-      "Surface temperatures are rising by about 0.2 °C per decade,with 2020 reaching a temperature of 1.2 °C above the pre-industrial era.Since1950, the number of cold days and nights has decreased, and the number of warm days and nights has increased.",
+      "Surface temperatures are rising by about 0.2 °C per decade,with 2020 reaching a temperature of 1.2 °C above the pre-industrial era. Since1950, the number of cold days and nights has decreased, and the number of warm days and nights has increased.",
     link: "/temperature",
     cssClass: "temperature",
     facts: [
@@ -17,7 +17,7 @@ const contentData = [
       {
         fact: "effects",
         factsList: [
-          "Severe storms as more moisture evaporate which exacerbastes rainfall and flooding.",
+          "Severe storms as more moisture evaporates which exacerbates rainfall and flooding.",
           "Wildfires ignition and propagation.",
           "Warming and rising of oceans.",
         ],
@@ -37,7 +37,7 @@ const contentData = [
     dataSource:
       "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide",
     textContent:
-      "Since the middle of the 20th century, annual emissions from burning fossil fuels have increased every decade, from an average of 3 billion tons of carbon (11 billion tons of carbon dioxide) a year in the 1960s to 9.5 billion tons of carbon (35 billion tons of carbon dioxide) per year in the 2010s",
+      "Since the middle of the 20th century, annual emissions from burning fossil fuels have increased every decade, from an average of 3 billion tons of carbon (11 billion tons of carbon dioxide) a year in the 1960s to 9.5 billion tons of carbon (35 billion tons of carbon dioxide) per year in the 2010s.",
     link: "/carbon-dioxide",
     cssClass: "carbonDioxide",
     facts: [
@@ -46,7 +46,7 @@ const contentData = [
         factsList: [
           "Construction and manufacturing industry to build real estate and produce iron, plastics, clothes, and others.",
           "Food production. Deforestation and land clearing for agriculture and grazing. Livestock digestion.",
-          "Cutting down forests: as trees are cut they release the carbon they have been storing. Less trees also less carbon dioxide absortion that ends up in the atmosphere.",
+          "Cutting down forests: as trees are cut they release the carbon they have been storing. Less trees also means less carbon dioxide absortion that ends up in the atmosphere.",
           "Transportation as they mostly run on fossil fuels.",
         ],
       },
@@ -54,7 +54,7 @@ const contentData = [
         fact: "effects",
         factsList: [
           "Health threat from air pollution.",
-          "It contributes to thicken the layer of gases that blankets the Earth and trap the sun's heat.",
+          "It contributes to thicken the layer of gases that blankets the Earth and traps the sun's heat.",
         ],
       },
       {
@@ -79,7 +79,7 @@ const contentData = [
       {
         fact: "causes",
         factsList: [
-          "Gasoline for cars and coal for heating a building.",
+          "Gasoline for cars and coal for heating buildings.",
           "Organic waste from livestock and garbage landfills release great amounts of methane during decomposition.",
         ],
       },
@@ -104,7 +104,7 @@ const contentData = [
     title: "nitrous oxide",
     dataSource: "https://www.epa.gov/ghgemissions/overview-greenhouse-gases",
     textContent:
-      "The impact of 1 pound of N2O on warming the atmosphere is almost 300 times that of 1 pound of carbon dioxide.Globally, about 40% of total N2O emissions come from human activities. Nitrous oxide is emitted from agriculture, land use, transportation, industry, and other activities, described below.",
+      "The impact of 1 pound of N2O on warming the atmosphere is almost 300 times that of 1 pound of carbon dioxide. Globally, about 40% of total N2O emissions come from human activities. Nitrous oxide is emitted from agriculture, land use, transportation, industry, among other activities.",
     link: "/nitrous-oxide",
     cssClass: "nitrousOxide",
     facts: [
@@ -113,7 +113,7 @@ const contentData = [
         factsList: [
           "Generating power by burning fossil fuels.",
           "Agriculture, especially fertilized soil and animal manure.",
-          "Melting of permafrost that contains ancient soil, sediments, and organic matter of plants and animals that, when exposed to oxygen, release nitrous oxide.",
+          "Melting of permafrost that contains ancient soil, sediments, and organic matter of plants and animals that, when exposed to oxygen, releases nitrous oxide.",
         ],
       },
       {
