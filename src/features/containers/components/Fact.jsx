@@ -7,6 +7,8 @@ import { nanoid } from "nanoid";
 import { motion } from "framer-motion";
 import styles from "./Fact.module.scss";
 
+// Each Fact is an  has its own specific header (fact prop), <li> (listItems prop) and gradient-color (cssClass prop) received from src/data/contentData.js
+
 const Fact = ({ fact, listItems, cssClass }) => {
   // motion framer animation
   const variants = {

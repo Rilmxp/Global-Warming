@@ -11,6 +11,7 @@ Component makes the call for a specific factor and renders the chart component
 PROPS:
   - apiParameter: "temperature" || "co2" || "methane" || "nitrous-oxide" || "arctic"
   - chart: "temperature" || "carbonDioxide" || "methane" || "nitrousOxide" || "polarIce"
+  - dataHandler: function to process data for that specific chart
 */
 
 const GraphContainer = ({ apiParameter, chart, dataHandler }) => {

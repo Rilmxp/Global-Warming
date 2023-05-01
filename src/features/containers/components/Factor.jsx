@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import styles from "./Factor.module.scss";
 
+// Each Factor has its own specific content and gradient-color (content.cssClass prop) received from src/data/contentData.js
+
 const Factor = ({ content }) => {
   const { title, introSummary, link, dataSource, cssClass } = content;
 
