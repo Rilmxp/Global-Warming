@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 
-// React router dom does not automatically scroll the route to the top of the page. This is what this component is for.
+// React router dom does not automatically scroll the route to the top of the page. This component will.
 
 export default function ScrollToTop(props) {
   const { pathname } = useLocation();

@@ -1,4 +1,4 @@
 import Factor from "./components/Factor";
-import Facts from "./components/Facts";
+import FactsContainer from "./components/FactsContainer";
 
-export { Factor, Facts };
+export { Factor, FactsContainer };

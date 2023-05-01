@@ -1,4 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
+import { nanoid } from "nanoid";
 import { quotations } from "../../../data/contentData";
 
 import styles from "./TextCarousel.module.scss";
@@ -13,9 +14,9 @@ function TextCarousel() {
       prevLabel={null}
       indicators={false}
     >
-      {quotations.map((item, index) => {
+      {quotations.map((item) => {
         return (
-          <Carousel.Item interval={5000} key={index}>
+          <Carousel.Item interval={4000} key={nanoid()}>
             <q>{item.quotation}</q>
             <p className={styles.author}>- {item.author}</p>
           </Carousel.Item>

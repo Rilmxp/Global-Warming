@@ -1,6 +1,6 @@
 import { IoEarth } from "react-icons/io5";
-import styles from "./Loader.module.scss";
 import { motion } from "framer-motion";
+import styles from "./Loader.module.scss";
 
 const Loader = () => {
   return (

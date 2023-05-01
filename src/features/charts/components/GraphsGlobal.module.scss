@@ -2,17 +2,18 @@
 
 .graphContainer {
   height: 350px;
-  // height: 50vh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   text-align: center;
   margin: 1rem 1rem 2rem 1rem;
   padding: 2rem 0rem;
   border-radius: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
   h4 {
     color: #808080;
     font-weight: bold;

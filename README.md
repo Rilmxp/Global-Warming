@@ -5,11 +5,3 @@ carbon dioxide - https://global-warming.org/api/co2-api
 Methane - https://global-warming.org/api/methane-api
 Nitrous Oxide - https://global-warming.org/api/nitrous-oxide-api
 Polar ice - https://global-warming.org/api/arctic-api
-
-TO DO:
-Pulire codice (cancellare tutti i //):
-
-FATTO IN ORDINE:
-
-- api: whole api folder:
-  to do from assets and down

@@ -1,12 +1,13 @@
 import Factor from "./Factor";
+import { nanoid } from "nanoid";
 import { contentData } from "../../../data/contentData";
 import styles from "./FactorsContainer.module.scss";
 
 const FactorsContainer = () => {
   return (
     <section className={styles.container}>
-      {contentData.map((item, index) => {
-        return <Factor key={index} content={item} />;
+      {contentData.map((item) => {
+        return <Factor key={nanoid()} content={item} />;
       })}
     </section>
   );

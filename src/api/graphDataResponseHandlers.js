@@ -40,10 +40,12 @@ function carbonDioxideDataHandler(data) {
 // Filters 3-yearly data
 function methaneDataHandler(data) {
   const graphData = data.methane;
+
   // get only the month of december (eg 1984.12)
   const annualEmissions = graphData.filter((item) => {
     return item.date.endsWith("12");
   });
+
   // get only ranges of 3 years time + last available year.
   const threeYearlyData = annualEmissions.filter((item, index) => {
     if (index % 3 === 0 || index === annualEmissions.length - 1) {
@@ -56,7 +58,7 @@ function methaneDataHandler(data) {
     let average;
 
     date = parseInt(item.date);
-    average = parseInt(item.average);
+    average = item.average;
 
     return { date, average };
   });
@@ -79,7 +81,7 @@ function nitrousOxideDataHandler(data) {
     let average;
 
     date = parseInt(item.date);
-    average = parseInt(item.average);
+    average = item.average;
 
     return { date, average };
   });
@@ -88,7 +90,6 @@ function nitrousOxideDataHandler(data) {
 }
 
 // POLAR ICE DATA
-//
 function polarIceDataHandler(data) {
   const graphData = data.arcticData;
 

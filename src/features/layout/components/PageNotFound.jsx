@@ -1,5 +1,5 @@
-import styles from "./PageNotFound.module.scss";
 import { Link } from "react-router-dom";
+import styles from "./PageNotFound.module.scss";
 
 const PageNotFound = () => {
   return (

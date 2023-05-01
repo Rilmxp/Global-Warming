@@ -1,10 +1,11 @@
+import {
+  GiMagnifyingGlass,
+  GiThermometerHot,
+  GiLightBulb,
+} from "react-icons/gi";
 import { nanoid } from "nanoid";
-import styles from "./Fact.module.scss";
-import { GiThermometerHot } from "react-icons/gi";
-import { GiMagnifyingGlass } from "react-icons/gi";
-import { GiLightBulb } from "react-icons/gi";
-// import { HiOutlineLightBulb } from "react-icons/hi";
 import { motion } from "framer-motion";
+import styles from "./Fact.module.scss";
 
 const Fact = ({ fact, listItems, cssClass }) => {
   // motion framer animation
@@ -17,6 +18,7 @@ const Fact = ({ fact, listItems, cssClass }) => {
     hidden: { opacity: 0, x: "-100%" },
   };
 
+  // bind each icon to its fact
   let iconToDisplay = null;
   switch (fact) {
     case "causes":

@@ -1,9 +1,7 @@
+import Fact from "./Fact";
 import { nanoid } from "nanoid";
 import { contentData } from "../../../data/contentData";
-
-import Fact from "./Fact";
-
-import styles from "./Facts.module.scss";
+import styles from "./FactsContainer.module.scss";
 
 const Facts = ({ factor }) => {
   const factorFound = contentData.find((item) => item.title === factor);
