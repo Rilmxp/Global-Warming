@@ -3,24 +3,84 @@
 .factorArticle {
   display: flex;
   flex-direction: column;
-  margin: 0rem 1.5rem 1.5rem;
+  // margin: 0rem 1.5rem 1.5rem;
+  margin: 1.5rem 1.5rem 2rem;
 
-  & > * {
-    margin-bottom: 1rem;
-  }
+  // & > * {
+  //   margin-bottom: 1rem;
+  // }
 
   h1 {
     text-align: left;
   }
 }
 
+.factorImg {
+  width: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  // margin-top: 1.5rem;
+  // margin-bottom: 0rem;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+
+  blockquote {
+    margin-bottom: 2rem;
+  }
+}
+
 .linkBtn {
-  align-self: end;
+  // align-self: end;
+  align-self: center;
   text-decoration: none;
   color: white;
   font-weight: 600;
 
   &:hover {
     color: white;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .factorArticle {
+    h1 {
+      margin-top: 0rem;
+      margin-left: 0rem;
+    }
+
+    row-gap: 5%;
+  }
+
+  .textContent {
+    width: 65%;
+    margin-bottom: 0rem;
+  }
+
+  .linkBtn {
+    align-self: start;
+  }
+
+  .factorImg {
+    width: 30%;
+  }
+
+  .factorArticle:nth-of-type(odd) {
+    flex-direction: row;
+
+    .factorImg {
+      margin-right: 1.5rem;
+    }
+  }
+
+  .factorArticle:nth-of-type(even) {
+    flex-direction: row-reverse;
+
+    .factorImg {
+      margin-left: 1.5rem;
+    }
   }
 }
