@@ -8,7 +8,7 @@ import { nanoid } from "nanoid";
 
 import { contentData } from "../../../data/contentData";
 import styles from "./NavigationBar.module.scss";
-import logo from "../../../assets/images/logo.png";
+import logo from "/images/logo.png";
 
 function NavigationBar() {
   // manage the opening/closing of canva

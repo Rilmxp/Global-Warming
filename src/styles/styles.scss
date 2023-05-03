@@ -8,6 +8,11 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/utilities";
 
+///////////////////////////////
+// own custom maps
+@import "custom-bootstrap-maps";
+//////////////////////////////
+
 // Layout & components
 @import "bootstrap/scss/root";
 @import "bootstrap/scss/reboot";
@@ -62,5 +67,5 @@
 @import "bootstrap/scss/utilities/api";
 
 //own imports
-@import "custom-bootstrap";
+@import "custom-bootstrap-main";
 @import "config";

@@ -3,7 +3,6 @@ import { FactorHeading } from "../../layout";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import styles from "./Factor.module.scss";
-// import FactorImg from "../../../assets/images/temperature.jpg";
 
 // Each Factor has its own specific content and gradient-color (content.cssClass prop) received from src/data/contentData.js
 

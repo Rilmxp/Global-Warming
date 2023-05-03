@@ -1,6 +1,6 @@
 .wrapper {
   min-height: inherit;
-  background-image: url("../../../assets/images/planet-earth-small.jpg");
+  background-image: url("/images/planet-earth-small.jpg");
   background-position: center;
   background-size: cover;
 
@@ -44,6 +44,6 @@
 
 @media only screen and (min-width: 900px) {
   .wrapper {
-    background-image: url("../../../assets/images/planet-earth-big.jpg");
+    background-image: url("/images/planet-earth-big.jpg");
   }
 }

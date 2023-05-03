@@ -69,7 +69,7 @@ Each factor page consists of a chart and a list of causes, effects, and improvem
 
 - Brand/Logo link to Home.
 - Links to all global warming factors.
-- Horizonal inline display of links on wide screens. Vertical canvas on narrow screens.
+- Horizonal inline display of links on wide screens. Vertical canvas on click of toggle button on narrow screens.
 
 <a name="home"></a>
 
@@ -95,6 +95,8 @@ On page load, it retrieves data from local file at src/data/contentData.js to fe
 
   - On page load, data will be fetched from its corresponding factor API and a chart will be rendered.
 
+  - On data chart loading, a loader animation will be shown.
+
   - In cases of huge amount of data, the same has been reduced in favor of a nicer/cleaner display. As an example, temperature data has been reduced to 1 value every ten years from 1880 until 1980, and annually from 1981 to present.
 
   - Linear, Area and Bar charts have been used to represent the data recieved.
@@ -106,7 +108,7 @@ On page load, it retrieves data from local file at src/data/contentData.js to fe
 - **Facts Section**
 
   - They consist of a list of "Causes", "Effects", and "What you can do" guidelines.
-  - Data is retrieved from local file at src/data/contentData.js.
+  - Data is dinamically retrieved from local file at src/data/contentData.js.
 
 <a name="error-page"></a>
 
@@ -141,13 +143,17 @@ Whenever the user manually inserts invalid data on the url, they will be redirec
 
 - **Folders and file structure**.
 
+  - **Note on `public/images` folder**. Given the fact that images are dinamically imported within `Factor.jsx`, they have been placed inside the `public` folder instead of `src`. All other files and folders have been created inside `src` folder
+
   - `features` folder has been divided into different categories to reduce clutter. Each folder has an `index.js` which imports and exports in only one place all the components from that specific feature. As an example, chart components for each factor will be found in the `charts` folder and, navbar and footer in the `layout` folder.
+
+  - `features/configuration` folder contains different animation setups for page transitions. `RoutesTransitionAnimation` contains all `Route` components. It configures them with `useLocation` so Framer Motion can animate their transition.
 
   - `data` folder contains `contentData.js` file with static data to feed `FactorsContainer.jsx` and `FactsContainer.jsx` and `TextCarousel.jsx` (quotations).
 
   - `styles` folder contains minimum common configuration sass files as most styles have been set using css modules.
 
-  - `api` folder contains axios base configuration for async calls on `graphDataApiConfig.js` and functions to handle API responses for each chart on `graphDataResponseHandlers.js`
+  - `api` folder contains axios base configuration for async calls on `graphDataApiConfig.js` and functions to handle API responses for each chart on `graphDataResponseHandlers.js`.
 
 </br>
 <a name="recharts"></a>
@@ -182,7 +188,7 @@ Whenever the user manually inserts invalid data on the url, they will be redirec
 
 ### Css/Sass/Css Modules
 
-- Three sass partials have been created. `_config.scss` for basic global styles. `_custom-bootstrap` to modify some bootstrap defaults. `_exports.module.scss` which is needed in chart components for &lt;defs&gt; and tooltip inline styles as per Recharts specifications since classes will simply not work.
+- A few sass partials have been created. `_config.scss` for basic global styles. `_custom-bootstrap-main.scss` and `_custom-bootstrap-maps.scss` to modify some bootstrap defaults. And `_exports.module.scss` which is needed in chart components for &lt;defs&gt; and tooltip inline styles as per Recharts specifications since classes will simply not work.
 
 - Apart from that, most of the styles have been defined in Css modules adjacent to each corresponding component.
 
@@ -191,7 +197,7 @@ Whenever the user manually inserts invalid data on the url, they will be redirec
 
 ### Other libraries
 
-- **React-Icons.** Github, briefcase, lightbulb, thermometer and magnifying glass.
+- **React-Icons.** Github, briefcase, lightbulb, thermometer and magnifying glass icons.
 
 - **Nanoid.** To create ids for react lists internal indexing.
 
@@ -207,12 +213,14 @@ Whenever the user manually inserts invalid data on the url, they will be redirec
 
 ## Responsiveness
 
-- the responsive nature of each component has been set directly on their own css module.
+The responsive nature of each component has been set directly on their own css module. Depending on the component, breakpoints have been set at min-width: 700px, 900px, 1400px.
 
-- Banner responsive image by changing url value from background-image property.
+- **Responsive images**:
+
+  - _Banner_: achieved by changing the url value from `background-image` property.
+  - _Factors_: achieved by setting `srcSet` attribute on the &lt;img&gt; tag.
 
 - **Responsive elements:**
 
-  - Width and height of Graph Container.
-  - Width of Facts container below charts.
-  - Width of Factors container on homepage.
+  - _Chart page_: width and height of `GraphContainer` and `FactsContainer`.
+  - _Homepage_: width of `FactorsContainer` and layout of its elements from vertical to horizontal.

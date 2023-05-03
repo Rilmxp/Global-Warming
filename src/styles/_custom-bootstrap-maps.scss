@@ -1,0 +1,9 @@
+// modify bootstrap "md" breakpoint to suit my needs.
+
+// creates own map
+$custom-grid-breakpoints: (
+  md: 770px,
+);
+
+// merge the map
+$grid-breakpoints: map-merge($grid-breakpoints, $custom-grid-breakpoints);

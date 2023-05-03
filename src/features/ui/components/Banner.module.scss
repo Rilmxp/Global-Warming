@@ -1,11 +1,12 @@
 .banner {
   position: relative;
-  background-image: url("../../../assets/images/planet-earth-small.jpg");
+  background-image: url("/images/planet-earth-small.jpg");
   min-height: 90vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;
+  margin-bottom: 2.5rem;
 }
 
 .layout {
@@ -28,7 +29,7 @@
 
 @media only screen and (min-width: 900px) {
   .banner {
-    background-image: url("../../../assets/images/planet-earth-big.jpg");
+    background-image: url("/images/planet-earth-big.jpg");
     background-position: initial;
   }
 
