@@ -2,7 +2,7 @@
 
 **Link to website:** https://rilmxp-global-warming.netlify.app/
 
-Global Warming is a ReactJs single page web application that fetches data from different APIs to create and render charts. These charts display evolving data of certain factors that have a deep impact on the environment and/or contribute to increase the greenhouse effect.
+An environmental information website created with React that renders charts about global warming's key factors by fetching data from different APIs. It promotes awareness about human impact on nature following the UN's Climate Action goal.
 
 HTTP requests for charts are made to **Global Warming and Climate Change API** at https://global-warming.org/api
 
