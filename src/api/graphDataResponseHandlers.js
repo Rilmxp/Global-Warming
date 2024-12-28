@@ -91,13 +91,24 @@ function nitrousOxideDataHandler(data) {
 
 // POLAR ICE DATA
 function polarIceDataHandler(data) {
-  const graphData = data.arcticData;
+  const graphData = data.arcticData.data;
 
-  const finalData = graphData.map((item) => {
-    // sets fixed decimals for large float numbers.
-    let extent = item.extent.toFixed(2);
-    return { ...item, extent };
-  });
+  // Extract only the firts month of each year and exclude value = -9999 (dirty data on the api)
+  const finalData = Object.keys(graphData)
+    .filter((key) => key.endsWith("01") && graphData[key].value !== -9999)
+    .map((key) => {
+      // Extract the year (first 4 digits of the key)
+      const year = key.substring(0, 4);
+
+      // Get the value property
+      const extent = graphData[key].value;
+
+      return {
+        year: year,
+        extent: extent,
+      };
+    });
+
   return finalData;
 }
 

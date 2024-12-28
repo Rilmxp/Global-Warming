@@ -21,6 +21,8 @@ const PolarIceChart = ({ graphData }) => {
     borderColor: graphInlineStyles.colorPolarIce1,
   };
 
+  console.log("graphPage", graphData);
+
   const graph = (
     <ResponsiveContainer width="100%">
       <AreaChart

@@ -6,6 +6,12 @@ An environmental information website created with React that renders charts abou
 
 HTTP requests for charts are made to **Global Warming and Climate Change API** at https://global-warming.org/api
 
+To run the app on local sever:
+
+- Clone repository
+- Install dependencies: `npm install`
+- Launch local server: `npm run dev`
+
 ---
 
 </br>
